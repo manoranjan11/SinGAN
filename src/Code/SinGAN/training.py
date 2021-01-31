@@ -9,9 +9,11 @@ import matplotlib.pyplot as plt
 from SinGAN.imresize import imresize
 
 def train(opt,Gs,Zs,reals,NoiseAmp):
+    # reads an image and inputs a torch tensor
     real_ = functions.read_image(opt)
     in_s = 0
     scale_num = 0
+    # resizes an image
     real = imresize(real_,opt.scale1,opt)
     reals = functions.creat_reals_pyramid(real,reals,opt)
     nfc_prev = 0
